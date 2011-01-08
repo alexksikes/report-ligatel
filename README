@@ -1,0 +1,44 @@
+Old code (back July 2007) I wrote to fix the invoices at Ligatel.
+
+Could be usefull to see how to nicely write CGIs in Python.
+The CGI interface simply wraps a command line version of the program.
+
+The command line supports the following options:
+
+Usage: python report.py [options] month_num year
+
+Description:
+Monthly invoices report sorted by reseller, transaction type and dates.
+
+Display Options:
+-p, --period [from_date,to_date] : flexible time period
+-t, --totals                     : output totals
+-e, --header                     : output header
+-c, --csv                        : csv output format for exel
+-l, --html                       : html output
+-h, --help                       : this help message
+
+Filter Options:
+--credit_cards : paid by credit cards only
+--cash         : paid by cash only
+--bradesco     : paid by brandesco
+--paid         : paid only
+--due          : due only
+--over_due     : over due invoices only
+
+Database Options:
+--columbia (default) : invoices from Columbia
+--brazil             : invoices from Brazil
+--honduras           : invoices from Honduras
+
+Exotic Options:
+-m, --email [email_1,...,email_n] : email report
+-s, --mini_search 'keywords'      : filter results by keywords
+
+Examples:
+'1) python report.py 2 2007'
+* List all invoices from 01/02/2007 till 31/02/2007
+'2) python report.py -p 12/03/2006,17/05/2007'
+* List all invoices from 12/03/2006 till 17/05/2007
+'3) python report.py --email alex@ligatel.com,mighel@ligatel.com 2 2007
+* Email invoices from 01/02/2007 till 31/02/2007 to mighel and alex

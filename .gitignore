@@ -1,0 +1,5 @@
+*.pyc
+*.so
+*~
+_report.py
+reports

@@ -1,0 +1,16 @@
+Fixes a couple of bugs. 
+
+Log every query performed on the CGI interface.
+
+Adds the following options to the command line version (and CGI interface):
+
+-a, --aggregate [field_1,...,field_n] : aggregate on certain fields
+                                        (customer, place, reseller, did, plan_name,
+                                        date (by month), status, invoice_status,
+                                        transaction_type)
+-b, --billing [country,day_num]       : the cash invoices are created manually
+                                        specify a billing day for a specific country
+                                        (eg day/01/2007 (included) --- day-1/02/2007 (included))
+                                        default is 28
+--sort [field_1,...,field_n]          : sort by date, customer, reseller ...
+--column [field_1,...,field_n]        : show only certain columns
